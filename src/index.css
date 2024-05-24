@@ -1,13 +1,122 @@
-body {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+* {
+  scrollbar-width: thin;
+}
+
+#loader {
+  width: 2rem;
+  height: 2rem;
+  position: relative;
+  border-radius: 11px;
+  animation: spin 1s ease infinite;
+
+  &:hover {
+    background: #303030;
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    width: 40%;
+    height: 40%;
+    display: block;
+    position: absolute;
+    border-radius: 9px;
+  }
+
+  &::before {
+    top: 3px;
+    left: 3px;
+    background: #3cd820;
+  }
+
+  &::after {
+    bottom: 3px;
+    right: 3px;
+    background: aqua;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(135deg);
+  }
+
+  to {
+    transform: rotate(495deg);
+  }
+}
+
+:root {
+  --loading-grey: #ededed;
+}
+
+.loading .image,
+.loading h4,
+.loading .description, 
+.loading .descriptiontwo,
+.loading .descriptionthree {
+  background-color: var(--loading-grey);
+  background: linear-gradient(
+    100deg,
+    rgba(255, 255, 255, 0) 40%,
+    rgba(255, 255, 255, .5) 50%,
+    rgba(255, 255, 255, 0) 60%
+  ) var(--loading-grey);
+  background-size: 200% 100%;
+  background-position-x: 180%;
+  animation: 1s loading ease-in-out infinite;
+}
+
+@keyframes loading {
+  to {
+    background-position-x: -20%;
+  }
+}
+
+.loading h4 {
+  min-height: 1.6rem;
+  border-radius: 4px;
+  animation-delay: .05s;
+}
+
+.loading .description {
+  min-height: 4rem;
+  border-radius: 4px;
+  animation-delay: .06s;
+}
+.loading .descriptiontwo {
+  min-height: 26rem !important;
+  border-radius: 4px;
+  animation-delay: .06s;
+}
+.loading .descriptionthree {
+  min-height: 15rem !important;
+  border-radius: 4px;
+  animation-delay: .06s;
+}
+
+.widthskeleton{
+  width: 100vw !important;
 }

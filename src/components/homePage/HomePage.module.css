@@ -1,0 +1,32 @@
+.height {
+    height: 100% !important;
+}
+
+.width {
+    width: 10rem !important;
+}
+
+.form_selecttt {
+    .form-selecttt {
+        --bs-form-select-bg-img: url(https://test-bookings.smaaash-entertainment.in/Image/blackdown.png) !important;
+        background-image: url(https://test-bookings.smaaash-entertainment.in/Image/blackdown.png) !important;
+        display: block;
+        width: 100%;
+        padding: 0.375rem 2.25rem 0.375rem 0.75rem;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: var(--bs-body-color);
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background-color: var(--bs-body-bg);
+        background-image: var(--bs-form-select-bg-img), var(--bs-form-select-bg-icon, none);
+        background-repeat: no-repeat;
+        background-position: right 0.75rem center;
+        background-size: 16px 12px;
+        border: var(--bs-border-width) solid var(--bs-border-color);
+        border-radius: var(--bs-border-radius);
+        transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    }
+}
